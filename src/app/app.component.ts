@@ -1,3 +1,10 @@
+/**
+ * Title: Nodebucket Capstone
+ * Author: Verlee Washington
+ * Date: 09/24/2020
+ * Description: App component ts
+ */
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +13,5 @@ import { Component } from '@angular/core';
   styles: [``]
 })
 export class AppComponent {
-  
+
 }

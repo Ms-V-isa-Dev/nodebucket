@@ -1,4 +1,11 @@
 /**
+ * Title: Nodebucket Capstone
+ * Author: Verlee Washington
+ * Date: 09/24/2020
+ * Description: App js
+ */
+
+/**
  * Require statements
  */
 const express = require('express');
@@ -7,6 +14,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
+const Employee = require('./models/employee');
 
 /**
  * App configurations
@@ -32,7 +40,8 @@ const conn = 'mongodb+srv://superadmin:s3cret@cluster0-lujih.mongodb.net/nodebuc
 mongoose.connect(conn, {
   promiseLibrary: require('bluebird'),
   useUnifiedTopology: true,
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useCreateIndex: true
 }).then(() => {
   console.debug(`Connection to the database instance was successful`);
 }).catch(err => {
@@ -42,7 +51,35 @@ mongoose.connect(conn, {
 /**
  * API(s) go here...
  */
+ // do this if you have 1 api
 
+ // use the mongoose employee model to query MongoDB Atlas by employee id
+ app.get('/api/employees/:empId', async(req, res) => {
+   try {
+
+    // use employee model to query db to pull employee record to match route parameter
+     Employee.findOne({'empId': req.params.empId}, function(err, employee) {
+
+      // if there is a database level error, handle by the server 500 error
+       if (err) {
+         console.log(err);// returns the db only
+         res.status(500).send({
+        'message': 'Internal server error!'
+     })
+    } else {
+      // if there are no database level errors, return the employee object {}
+      console.log(employee);
+      res.json(employee);
+    }
+  })
+
+   } catch (e) {
+    console.log(e);
+    res.status(500).send({
+      'message': 'Internal server error!'
+    })
+   }
+ })
 /**
  * Create and start server
  */

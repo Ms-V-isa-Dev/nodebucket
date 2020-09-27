@@ -1,3 +1,10 @@
+/**
+ * Title: Nodebucket Capstone
+ * Author: Verlee Washington
+ * Date: 09/24/2020
+ * Description: Auth-layout component ts
+ */
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
