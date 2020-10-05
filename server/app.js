@@ -14,7 +14,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
-const Employee = require('./models/employee');
+const Employee = require('./models/employee');// get the employee model from the models directory
+const EmployeeApi = require('./routes/employee-api');
 
 /**
  * App configurations
@@ -51,35 +52,7 @@ mongoose.connect(conn, {
 /**
  * API(s) go here...
  */
- // do this if you have 1 api
-
- // use the mongoose employee model to query MongoDB Atlas by employee id
- app.get('/api/employees/:empId', async(req, res) => {
-   try {
-
-    // use employee model to query db to pull employee record to match route parameter
-     Employee.findOne({'empId': req.params.empId}, function(err, employee) {
-
-      // if there is a database level error, handle by the server 500 error
-       if (err) {
-         console.log(err);// returns the db only
-         res.status(500).send({
-        'message': 'Internal server error!'
-     })
-    } else {
-      // if there are no database level errors, return the employee object {}
-      console.log(employee);
-      res.json(employee);
-    }
-  })
-
-   } catch (e) {
-    console.log(e);
-    res.status(500).send({
-      'message': 'Internal server error!'
-    })
-   }
- })
+ app.use('/api/employees', EmployeeApi); //takes us to localhost:3000/api/employees
 /**
  * Create and start server
  */

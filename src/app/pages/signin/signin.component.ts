@@ -33,8 +33,9 @@ export class SigninComponent implements OnInit {
   login() {
     const empId = this.form.controls['empId'].value;
 
-    this.router.navigate(['/']);
+
     this.http.get('/api/employees/' + empId).subscribe(res => {
+     this.router.navigate(['/']);
       if (res) {
         this.cookieService.set('session_user', empId, 1);// set the employee id to the cookie session_user name
       } else {
