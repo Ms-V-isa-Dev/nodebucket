@@ -2,7 +2,7 @@
  * Title: Nodebucket Capstone
  * Author: Verlee Washington
  * Date: 09/28/2020
- * Description: Item js
+ * Description: Item schema for the employee model, todo and done
  */
 
  const mongoose = require('mongoose');
@@ -12,4 +12,4 @@
    text: { type: String }
  });
 
- module.exports = itemSchema;
+ module.exports = itemSchema;// collection of items

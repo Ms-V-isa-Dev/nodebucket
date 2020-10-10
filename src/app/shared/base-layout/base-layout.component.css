@@ -1,12 +1,12 @@
 .logo {
-    margin-left: 75px;
+    margin-left: 20px;
     font-size: 24px;
     font-weight: lighter;
   }
 
-  .logo image {
-    max-height: 200px;
-    max-width: 250px;
+  .mat-toolbar-row.logo {
+    margin-left: 20px;
+    padding: 10px;
   }
 
   .navbar-container {
@@ -42,3 +42,5 @@
   .bu-link:hover {
     text-decoration: underline;
   }
+
+
