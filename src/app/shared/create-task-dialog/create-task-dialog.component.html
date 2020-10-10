@@ -1,0 +1,21 @@
+<!--
+=============================================
+; Title: Nodebucket Capstone
+; Author: Verlee Washington
+; Date: 10/10/2020
+; Description: Create task dialog html
+;============================================
+-->
+
+<h2 mat-dialog-title>Add new task</h2>
+
+<mat-dialog-content [formGroup]="taskForm">
+  <mat-form-field style="width: 200px;">
+    <input type="text" placeholder="Name your task..." matInput formControlName="text" (keydown.enter)="createTask()" />
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button (click)="cancel()">Cancel</button>
+  <button mat-raised-button [disabled]="!taskForm.valid" (click)="createTask()">Create Task</button>
+</mat-dialog-actions>

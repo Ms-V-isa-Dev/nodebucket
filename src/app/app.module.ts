@@ -2,7 +2,7 @@
  * Title: Nodebucket Capstone
  * Author: Verlee Washington
  * Date: 09/24/2020
- * Description: App module ts
+ * Description: App module for the application
  */
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,9 +24,15 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CookieService } from 'ngx-cookie-service';
 import { AboutComponent } from './pages/about/about.component';
-
+import { DragDropModule} from '@angular/cdk/drag-drop';
+import { MatDividerModule} from '@angular/material/divider';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { CreateTaskDialogComponent } from './shared/create-task-dialog/create-task-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,9 @@ import { AboutComponent } from './pages/about/about.component';
     BaseLayoutComponent,
     AuthLayoutComponent,
     SigninComponent,
-    AboutComponent
+    AboutComponent,
+    NotFoundComponent,
+    CreateTaskDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +59,11 @@ import { AboutComponent } from './pages/about/about.component';
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-
+    MatSnackBarModule,
+    DragDropModule,
+    MatDividerModule,
+    MatDialogModule,
+    MatMenuModule
   ],
   providers: [
     //CookieService is a version change with Angular
