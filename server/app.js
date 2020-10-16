@@ -12,8 +12,10 @@ const express = require('express');
 const http = require('http');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const path = require('path');
 const mongoose = require('mongoose');
+const favicon = require('serve-favicon');
 const Employee = require('./models/employee');// get the employee model from the models directory
 const EmployeeApi = require('./routes/employee-api');
 
@@ -22,8 +24,10 @@ const EmployeeApi = require('./routes/employee-api');
  */
 let app = express();
 app.use(bodyParser.json());
+app.use(favicon(path.join(_dirname, 'public', 'favicon.io')));
 app.use(bodyParser.urlencoded({'extended': true}));
 app.use(morgan('dev'));
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../dist/nodebucket')));
 app.use('/', express.static(path.join(__dirname, '../dist/nodebucket')));
 
