@@ -12,7 +12,6 @@ const express = require('express');
 const http = require('http');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 const favicon = require('serve-favicon');
@@ -27,7 +26,6 @@ app.use(bodyParser.json());
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.urlencoded({'extended': true}));
 app.use(morgan('dev'));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../dist/nodebucket')));
 app.use('/', express.static(path.join(__dirname, '../dist/nodebucket')));
 
