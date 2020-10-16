@@ -14,7 +14,6 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
-const favicon = require('serve-favicon');
 const Employee = require('./models/employee');// get the employee model from the models directory
 const EmployeeApi = require('./routes/employee-api');
 
@@ -23,7 +22,6 @@ const EmployeeApi = require('./routes/employee-api');
  */
 let app = express();
 app.use(bodyParser.json());
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.urlencoded({'extended': true}));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../dist/nodebucket')));
