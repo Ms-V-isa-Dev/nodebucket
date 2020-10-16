@@ -192,7 +192,7 @@
           console.log(employee);
 
           const todoItem = employee.todo.find(item => item._id.toString() === req.params.taskId);
-          const doneItem = employee.todo.find(item => item._id.toString() === req.params.taskId);
+          const doneItem = employee.done.find(item => item._id.toString() === req.params.taskId);
 
           // validate if there is anything there.
           if (todoItem) {
@@ -216,7 +216,7 @@
         } else if (doneItem) {
           employee.done.id(doneItem._id).remove();
 
-          employee.save(function(er, updatedTodoItemEmployee) {
+          employee.save(function(err, updatedDoneItemEmployee) {
 
             if (err) {
               console.log(err);
