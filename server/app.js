@@ -20,7 +20,7 @@ const EmployeeApi = require('./routes/employee-api');
 /**
  * App configurations
  */
-let app = express();
+app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended': true}));
 app.use(morgan('dev'));
@@ -30,10 +30,11 @@ app.use('/', express.static(path.join(__dirname, '../dist/nodebucket')));
 /**
  * Variables
  */
-const port = process.env.PORT || 3000; // server port
+const PORT = process.env.PORT || '3000'; // server port
+app.set("port", PORT);
 
 // TODO: This line will need to be replaced with your actual database connection string
-const conn = 'mongodb+srv://superadmin:s3cret@cluster0-lujih.mongodb.net/nodebucket';
+const conn = 'mongodb+srv://superadmin:s3cret@cluster0-lujih.mongodb.net/nodebucket?retryWrites=true&w=majority';
 
 /**
  * Database connection
