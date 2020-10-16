@@ -24,7 +24,7 @@ const EmployeeApi = require('./routes/employee-api');
  */
 let app = express();
 app.use(bodyParser.json());
-app.use(favicon(path.join(_dirname, 'public', 'favicon.io')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.urlencoded({'extended': true}));
 app.use(morgan('dev'));
 app.use(cookieParser());
