@@ -27,12 +27,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CookieService } from 'ngx-cookie-service';
 import { AboutComponent } from './pages/about/about.component';
+import { GetStartedComponent } from './pages/get-started/get-started.component';
 import { DragDropModule} from '@angular/cdk/drag-drop';
 import { MatDividerModule} from '@angular/material/divider';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CreateTaskDialogComponent } from './shared/create-task-dialog/create-task-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { MatMenuModule } from '@angular/material/menu';
     SigninComponent,
     AboutComponent,
     NotFoundComponent,
-    CreateTaskDialogComponent
+    CreateTaskDialogComponent,
+    GetStartedComponent
   ],
   imports: [
     BrowserModule,
