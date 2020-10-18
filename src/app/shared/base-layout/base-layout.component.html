@@ -14,21 +14,17 @@
 
       <mat-toolbar class="toolbar" color="primary">
 
-        <!-- navbar container-->
-        <mat-toolbar-row class="navbar-container">
-
-          <!-- logo -->
-          <mat-toolbar-row class="logo" routerLink="/">
-            <img src="./assets/nodebucketLogo.png" height="65" />
-          </mat-toolbar-row>
-
-          <mat-toolbar-row fxLayout="row wrap" fxLayoutAlign="end start">
-            <button class="navbar-link" mat-button routerLink="/get-started">Get started</button>
-            <button class="navbar-link" mat-button routerLink="/about">About</button>
-            <button class="navbar-link" mat-button (click)="signOut()">Sign out</button>
-          </mat-toolbar-row>
-
+        <!-- logo -->
+        <mat-toolbar-row class="logo" routerLink="/">
+          <img src="./assets/nodebucketLogo.png" height="65" />
         </mat-toolbar-row>
+
+        <mat-toolbar-row fxLayout="row wrap" fxLayoutAlign="end start">
+          <button class="navbar-link" mat-button routerLink="/get-started">Get started</button>
+          <button class="navbar-link" mat-button routerLink="/about">About</button>
+          <button class="navbar-link" mat-button (click)="signOut()">Sign out</button>
+        </mat-toolbar-row>
+
       </mat-toolbar>
     </nav>
 
