@@ -15,11 +15,9 @@
       <mat-toolbar class="toolbar" color="primary">
 
         <!-- logo -->
-        <mat-toolbar-row class="logo" routerLink="/">
           <img src="./assets/nodebucketLogo.png" height="65" />
-        </mat-toolbar-row>
 
-        <mat-toolbar-row fxLayout="row wrap" fxLayoutAlign="end start">
+        <mat-toolbar-row class="logo" fxLayout="row wrap" fxLayoutAlign="end start">
           <button class="navbar-link" mat-button routerLink="/get-started">Get started</button>
           <button class="navbar-link" mat-button routerLink="/about">About</button>
           <button class="navbar-link" mat-button (click)="signOut()">Sign out</button>
