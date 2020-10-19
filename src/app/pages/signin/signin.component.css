@@ -1,0 +1,14 @@
+
+
+.mat-card {
+  width: 25%;
+  padding-right: 10px;
+}
+
+.mat-card-title {
+  align-self: flex-start;
+  padding-right: 10px;
+}
+
+
+

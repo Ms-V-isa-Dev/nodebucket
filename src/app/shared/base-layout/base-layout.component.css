@@ -7,6 +7,19 @@
     font-weight: lighter;
   }
 
+  .image {
+    width: 100px;
+    height: 65px;
+  }
+
+  div.logo {
+    width: 200px;
+  }
+
+  .mat-toolbar-row {
+    width: 50%;
+  }
+
   .mat-toolbar-row.logo {
     margin-left: 20px;
     padding: 10px;

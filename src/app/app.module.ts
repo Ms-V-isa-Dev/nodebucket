@@ -46,7 +46,7 @@ import { MatMenuModule } from '@angular/material/menu';
     AboutComponent,
     NotFoundComponent,
     CreateTaskDialogComponent,
-    GetStartedComponent
+    GetStartedComponent,
   ],
   imports: [
     BrowserModule,
