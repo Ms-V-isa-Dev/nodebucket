@@ -9,23 +9,31 @@
 
 <div fxLayout="column">
 
-    <!-- navigation -->
-    <nav fxFlex>
+  <!-- navigation -->
+  <nav fxFlex class="navbar-container">
 
-      <mat-toolbar class="toolbar" color="primary">
+    <mat-toolbar class="toolbar" color="primary">
+      <mat-toolbar-row style="width: 100%">
 
-        <!-- logo -->
-          <img src="./assets/nodebucketLogo.png" height="65" />
+      <!-- logo -->
+      <div class="logo">
+        <br /><br />
+        <img src="./assets/nodebucketLogo.png" width="200px" height="125px">
+      </div>
 
-        <mat-toolbar-row class="logo" fxLayout="row wrap" fxLayoutAlign="end start">
+      <div style="width: 80%">
+        <div fxLayout="row wrap" fxLayoutAlign="end start">
           <button class="navbar-link" mat-button routerLink="/get-started">Get started</button>
           <button class="navbar-link" mat-button routerLink="/about">About</button>
-          <button class="navbar-link" mat-button (click)="signOut()">Sign out</button>
-        </mat-toolbar-row>
+          <button class="navbar-link" mat-button (click)="signOut()" routerLink="/">Sign out</button>
+        </div>
+      </div>
 
-      </mat-toolbar>
-    </nav>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </nav>
 
+  <br />
     <!-- main content -->
     <div fxFlex>
       <main class="main-content" fxFlex="100%;">
@@ -45,4 +53,4 @@
       </footer>
     </div>
 
-  </div>
+</div>
