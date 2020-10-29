@@ -2,7 +2,7 @@
  * Title: Nodebucket Capstone
  * Author: Verlee Washington
  * Date: 09/24/2020
- * Description: App module for the application
+ * Description: App modules for the application
  */
 
 import { BrowserModule } from '@angular/platform-browser';
